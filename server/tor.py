@@ -2,10 +2,12 @@ import json
 
 import tornado.ioloop
 import tornado.web
+import tornado.options
 
 from config import *
 from sqlHandler import *
 
+tornado.options.define("port", default=8080, type=int, help="run server on the given port.") # 定义服务器监听端口选项
 
 class registerHandler(tornado.web.RedirectHandler):
     def initialize(self):
@@ -81,7 +83,7 @@ class loginHandler(tornado.web.RequestHandler):
 
 if __name__ == '__main__':
     app = tornado.web.Application([(r"/login", loginHandler), (r"/register", registerHandler)])
-    port = 29888
+    port = tornado.options.options.port
     app.listen(port)
     print("Running on port", port)
     tornado.ioloop.IOLoop.current().start()
