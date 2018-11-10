@@ -1,10 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../mdui/css/mdui.min.css">
+    <script src="../mdui/js/mdui.js"></script>
+    <script src="../static/registerModule.js"></script>
+    <script src="../static/md5.js"></script>
+    <script src="../static/config.js"></script>
     <title>Register</title>
 </head>
-<body>
-<a href="#" onclick="self.location=document.referrer;">返回</a>
+<body class="mdui-theme-primary-blue-grey mdui-appbar-with-toolbar mdui-p-b-4">
+<!-- appbar -->
+<div class="mdui-appbar mdui-appbar-fixed">
+    <div class="mdui-toolbar mdui-color-theme">
+        <span class="mdui-typo-title">Register</span>
+    </div>
+</div>
+<!-- 登陆界面主体 -->
+<div class="mdui-container mdui-col-xs-6 mdui-center">
+    <div class="register-page  mdui-col-xs-5 mdui-col-offset-md-9">
+        <div class="mdui-typo-headline">
+            <h4>We need your information</h4>
+        </div>
+        <div class="mdui-textfield mdui-textfield-floating-label" id="usernameTextfield">
+            <i class="mdui-icon material-icons">account_circle</i>
+            <label class="mdui-textfield-label" for="username">学号</label>
+            <input class="mdui-textfield-input" type="text" id="username" maxlength="20" required/>
+            <div class="mdui-textfield-error" id="usernameError">请输入学号</div>
+        </div>
+        <br>
+        <div class="mdui-textfield mdui-textfield-floating-label" id="passwordTextfield">
+            <i class="mdui-icon material-icons">lock</i>
+            <label class="mdui-textfield-label" for="password">密码</label>
+            <input class="mdui-textfield-input" type="password" id="password" maxlength="20" required/>
+            <div class="mdui-textfield-error" id="passwordError">请输入密码</div>
+            <div class="mdui-textfield-helper" id="passwordHelper">只包含大小写字母和数字</div>
+        </div>
+        <br>
+        <div class="mdui-textfield mdui-textfield-floating-label" id="passwordConfirmTextfield">
+            <i class="mdui-icon material-icons">lock</i>
+            <label class="mdui-textfield-label" for="passwordConfirm">确认密码</label>
+            <input class="mdui-textfield-input" type="password" id="passwordConfirm" maxlength="20" required/>
+            <div class="mdui-textfield-error" id="passwordConfirmError">请确认密码</div>
+        </div>
+        <br>
+        <div class="mdui-textfield mdui-textfield-floating-label" id="nameTextfield">
+            <i class="mdui-icon material-icons">border_color</i>
+            <label class="mdui-textfield-label" for="name">姓名</label>
+            <input class="mdui-textfield-input" type="text" id="name" maxlength="20" required/>
+            <div class="mdui-textfield-error" id="nameError">请输入姓名</div>
+        </div>
+        <br>
+        <div class="mdui-textfield mdui-textfield-floating-label" id="schoolTextfield">
+            <i class="mdui-icon material-icons">school</i>
+            <label class="mdui-textfield-label" for="school">学校</label>
+            <input class="mdui-textfield-input" type="text" id="school" maxlength="20" required/>
+            <div class="mdui-textfield-error" id="schoolError">请输入学校名称</div>
+        </div>
+        <br>
+        <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme mdui-float-right" id='confirmRegister'>注册
+        </button>
+    </div>
+</div>
+
 </body>
 </html>

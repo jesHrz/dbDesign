@@ -7,32 +7,77 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../mdui/css/mdui.min.css">
     <script src="../mdui/js/mdui.js"></script>
-    <script src="../static/main.js"></script>
+    <script src="../static/loginModule.js"></script>
+    <script src="../static/config.js"></script>
+    <script src="../static/md5.js"></script>
     <title>Login</title>
 </head>
-<body class="mdui-theme-primary-blue-grey mdui-appbar-with-toolbar mdui-p-b-5">
+<body class="mdui-theme-primary-blue-grey mdui-appbar-with-toolbar mdui-p-b-4">
 <div class="mdui-appbar mdui-appbar-fixed">
     <div class="mdui-toolbar mdui-color-theme">
         <span class="mdui-typo-title">Login</span>
     </div>
 </div>
 
-<div class="mdui-container mdui-m-t-5 mdui-row main-father mdui-center">
-    <div class="login-page  mdui-col-sm-8 mdui-col-offset-sm-2 mdui-m-t-5">
-        </br>
-        <div class="mdui-textfield mdui-textfield-floating-label">
-            <!--<label class="mdui-textfield-label">12 位学号</label>-->
-            <input class=" mdui-textfield-input" type="text" id='username' placeholder="学号" required/>
+<div class="mdui-container mdui-col-xs-6 mdui-center">
+    <div class="login-page  mdui-col-xs-5 mdui-col-offset-md-9">
+        <div class="mdui-typo-title">
+            <h1>Welcome</h1>
         </div>
-        </br>
-        <div class="mdui-textfield mdui-textfield-floating-label">
-            <!--<label class="mdui-textfield-label">本科生教务系统密码，默认 123456</label>-->
-            <input class="mdui-textfield-input" type="password" id='password' placeholder="密码" required/>
+        <br>
+
+        <!-- 浮动标签 学号 -->
+        <div class="mdui-textfield mdui-textfield-floating-label" id="usernameTextfield">
+            <i class="mdui-icon material-icons">account_circle</i>
+            <label class="mdui-textfield-label" for="username">学号</label>
+            <input class="mdui-textfield-input" type="text" id="username" required/>
+            <div class="mdui-textfield-error" id="usernameError">请输入密码</div>
         </div>
-        </br>
+        <br>
+
+        <!-- 浮动标签 密码 -->
+        <div class="mdui-textfield mdui-textfield-floating-label" id="passwordTextfield">
+            <i class="mdui-icon material-icons">lock</i>
+            <label class="mdui-textfield-label" for="password">密码</label>
+            <input class="mdui-textfield-input" type="password" id="password" required/>
+            <div class="mdui-textfield-error" id="passwordError">请输入密码</div>
+        </div>
+        <br>
+
+        <!-- 登录按钮 -->
         <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme mdui-float-right" id='login'>登录</button>
-        <!--<button class="mdui-float-right mdui-btn-raised mdui-color-theme mdui-ripple-blue-grey" id="login">登录</button>-->
-        <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme mdui-float-left" id='register'>注册</button>
+
+        <!-- 浮动按钮 -->
+        <div class="mdui-fab-wrapper" mdui-fab="{trigger: 'hover'}" id="exampleFab">
+            <button class="mdui-fab mdui-ripple mdui-fab mdui-color-theme">
+                <!-- 默认显示的图标 -->
+                <i class="mdui-icon material-icons">add</i>
+
+                <!-- 在拨号菜单开始打开时，平滑切换到该图标，若不需要切换图标，则可以省略该元素 -->
+                <i class="mdui-icon mdui-fab-opened material-icons">add</i>
+            </button>
+            <div class="mdui-fab-dial">
+                <!-- 注册按钮 -->
+                <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink"
+                        mdui-tooltip="{content: '注册', position: 'left'}"
+                        id="register">
+                    <i class="mdui-icon material-icons">create</i>
+                </button>
+                <!-- 忘记密码 -->
+                <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-red"
+                        mdui-tooltip="{content: '忘记密码', position: 'left'}"
+                        id="forget">
+                    <i class="mdui-icon material-icons">autorenew</i>
+                </button>
+            </div>
+        </div>
+        <!--<div class="mdui-col-offset-xs-7">-->
+        <!--<a>忘记密码</a>-->
+        <!--<br>-->
+        <!--<a href="register/reg.html">注册</a>-->
+        <!--</div>-->
+
+        <!--<button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme mdui-col-offset-xs-5" id='register'>注册</button>-->
     </div>
 
 </div>

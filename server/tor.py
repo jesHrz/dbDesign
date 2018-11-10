@@ -1,45 +1,85 @@
+import json
+
+import tornado.ioloop
 import tornado.web
+
+from config import *
 from sqlHandler import *
-import tornado.web
-
-from sqlHandler import *
 
 
-class loginHandler():
+class registerHandler(tornado.web.RedirectHandler):
+    def initialize(self):
+        self.handler = sqlHandler(dbUsername, dbPassword, dbDatabase, dbHost, dbPort)
 
-    def login(self, username, pwd):
-        sql = f"select pwd from login where sid = {username}"
-        self.cursor.execute(sql)
-        rr = self.cursor.fetchall()
-        print(rr[0][0])
-        if pwd == rr[0][0]:
-            sql = f"select name from person where sid = {username}"
-            self.cursor.execute(sql)
-            rr = self.cursor.fetchall()
-            return rr[0][0]
+    def set_default_headers(self):
+        self.set_header("Access-Control-Allow-Origin", "*")
+        self.set_header("Access-Control-Allow-Headers", "x-requested-with,authorization")
+        self.set_header('Access-Control-Allow-Methods', 'POST,GET,PUT,DELETE,OPTIONS')
+
+    def get(self):
+        type = self.get_argument('type')
+        print(type)
+        if type == 'school':
+            school = self.get_argument('info')
+            res = self.handler.select("select * from school where school_name = %s", (school))
+            pack = {'success': len(res) > 0, 'data': res}
+            self.write(json.dumps(pack))
+        elif type == 'sid':
+            sid = self.get_argument('info')
+            res = self.handler.select("select * from login where sid = %s", (sid))
+            print(res)
+            pack = {'success': len(res) > 0, 'data': res}
+            self.write(json.dumps(pack))
         else:
-            return ""
-
-class mainHandler(tornado.web.RequestHandler):
-    #service = login()
+            pack = {'success': False, 'data': []}
+            self.write(json.dumps(pack))
 
     def post(self):
-        self.set_header('Access-Control-Allow-Origin', '*')
-        username = self.get_argument('usr')
+        sid = self.get_argument('usr')
         pwd = self.get_argument('pwd')
-        res = self.service.login(username, pwd)
-        if res != "":
-            print(res, "login")
-            self.write("Welcome, " + res)
+        name = self.get_argument('name')
+        schoolId = self.get_argument('school')
+        print("register, ", sid, pwd, name, schoolId)
+        if self.handler.insert(
+                "insert into person (sid, team_id, school_id, name, rating) values (%s, null, %s, %s, null)",
+                (sid, schoolId, name)) and \
+                self.handler.insert("insert into login (sid, pwd) values(%s,%s)",
+                                    (sid, pwd)):
+            self.handler.commit()
+            pack = {'success': True, 'data': []}
+            self.write(json.dumps(pack))
         else:
-            self.write("login failed")
+            self.handler.rollback()
+            pack = {'success': False, 'data': []}
+            self.write(json.dumps(pack))
+
+
+class loginHandler(tornado.web.RequestHandler):
+    def initialize(self):
+        self.handler = sqlHandler(dbUsername, dbPassword, dbDatabase, dbHost, dbPort)
+
+    def set_default_headers(self):
+        self.set_header("Access-Control-Allow-Origin", "*")
+        self.set_header("Access-Control-Allow-Headers", "x-requested-with,authorization")
+        self.set_header('Access-Control-Allow-Methods', 'POST,GET,PUT,DELETE,OPTIONS')
+
+    def post(self):
+        usr = self.get_argument('usr')
+        pwd = self.get_argument('pwd')
+        print("login, ", usr, pwd)
+        res = self.handler.select("select pwd from login where sid = %s", (usr))
+
+        if res[0]['pwd'] == pwd:
+            pack = {'success': True, 'data': []}
+            self.write(json.dumps(pack))
+        else:
+            pack = {'success': False, 'data': []}
+            self.write(json.dumps(pack))
+
 
 if __name__ == '__main__':
-    """app = tornado.web.Application([(r"/login/", mainHandler), ])
+    app = tornado.web.Application([(r"/login", loginHandler), (r"/register", registerHandler)])
     port = 29888
     app.listen(port)
     print("Running on port", port)
-    tornado.ioloop.IOLoop.current().start()"""
-    mysql = sqlHandler("tornado", "tornado", "dbDesign", "139.196.96.35")
-    print(mysql.select("select pwd from login"))
-    print(mysql.select("select * from login"))
+    tornado.ioloop.IOLoop.current().start()

@@ -29,7 +29,6 @@ class sqlHandler():
         try:
             cursor = self.db.cursor(cursor=pymysql.cursors.DictCursor)
             cursor.execute(command, args)
-            self.db.commit()
             return True
         except:
             self.db.rollback()
@@ -39,7 +38,6 @@ class sqlHandler():
         try:
             cursor = self.db.cursor(cursor=pymysql.cursors.DictCursor)
             cursor.execute(command, args)
-            self.db.commit()
             return True
         except:
             self.db.rollback()
@@ -49,8 +47,13 @@ class sqlHandler():
         try:
             cursor = self.db.cursor(cursor=pymysql.cursors.DictCursor)
             cursor.execute(command, args)
-            self.db.commit()
             return True
         except:
             self.db.rollback()
             return False
+
+    def commit(self):
+        self.db.commit()
+
+    def rollback(self):
+        self.db.rollback()
