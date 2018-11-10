@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../mdui/css/mdui.min.css">
+    <script src="../mdui/js/mdui.js"></script>
+    <script src="../static/main.js"></script>
+    <title>Login</title>
+</head>
+<body class="mdui-theme-primary-blue-grey mdui-appbar-with-toolbar mdui-p-b-5">
+<div class="mdui-appbar mdui-appbar-fixed">
+    <div class="mdui-toolbar mdui-color-theme">
+        <span class="mdui-typo-title">Login</span>
+    </div>
+</div>
+
+<div class="mdui-container mdui-m-t-5 mdui-row main-father mdui-center">
+    <div class="login-page  mdui-col-sm-8 mdui-col-offset-sm-2 mdui-m-t-5">
+        </br>
+        <div class="mdui-textfield mdui-textfield-floating-label">
+            <!--<label class="mdui-textfield-label">12 位学号</label>-->
+            <input class=" mdui-textfield-input" type="text" id='username' placeholder="学号" required/>
+        </div>
+        </br>
+        <div class="mdui-textfield mdui-textfield-floating-label">
+            <!--<label class="mdui-textfield-label">本科生教务系统密码，默认 123456</label>-->
+            <input class="mdui-textfield-input" type="password" id='password' placeholder="密码" required/>
+        </div>
+        </br>
+        <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme mdui-float-right" id='login'>登录</button>
+        <!--<button class="mdui-float-right mdui-btn-raised mdui-color-theme mdui-ripple-blue-grey" id="login">登录</button>-->
+        <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme mdui-float-left" id='register'>注册</button>
+    </div>
+
+</div>
+
+</body>
+</html>
