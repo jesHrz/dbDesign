@@ -1,1 +1,1 @@
-let baseUrl = "http://localhost:29888";
+let baseUrl = "http://139.196.96.35:8080";

@@ -18,10 +18,10 @@ class registerHandler(tornado.web.RedirectHandler):
 
     def get(self):
         type = self.get_argument('type')
-        print(type)
         if type == 'school':
             school = self.get_argument('info')
             res = self.handler.select("select * from school where school_name = %s", (school))
+            print(res)
             pack = {'success': len(res) > 0, 'data': res}
             self.write(json.dumps(pack))
         elif type == 'sid':
@@ -75,6 +75,8 @@ class loginHandler(tornado.web.RequestHandler):
         else:
             pack = {'success': False, 'data': []}
             self.write(json.dumps(pack))
+    def get(self):
+        self.write("hello")
 
 
 if __name__ == '__main__':

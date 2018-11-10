@@ -180,7 +180,8 @@ let Handler = function () {
             let name = $$('#name').val();
             let school = $$('#school').val();
 
-            let ready = checkSid(sid, sidStatus) && checkPwd(pwd) && confirmPwd(pwd, pwdConfirm) && checkSchool(school, status) && checkName(name);
+            console.log(school, schoolStatus);
+            let ready = checkSid(sid, sidStatus) && checkPwd(pwd) && confirmPwd(pwd, pwdConfirm) && checkName(name) && checkSchool(school, schoolStatus);
             if (!ready) return;
 
             $$.ajax({

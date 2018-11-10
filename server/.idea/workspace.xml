@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15cf74ed-2658-4da5-a44d-c9b5e8a6ef03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/dictionaries/Huang.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../static/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../static/loginModule.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../static/registerModule.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../register/reg.html" beforeDir="false" afterPath="$PROJECT_DIR$/../register/reg.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sqlHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/sqlHandler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tor.py" beforeDir="false" afterPath="$PROJECT_DIR$/tor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../static/main.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +53,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2393" />
+          <entry key="py" value="2428" />
           <entry key="sql" value="23" />
           <entry key="txt" value="8" />
         </counts>
@@ -75,7 +61,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="2393" />
+          <entry key="Python" value="2428" />
           <entry key="Scratch" value="23" />
         </counts>
       </usages-collector>
@@ -86,13 +72,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="68" column="34" lean-forward="true" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="34" />
+            <state relative-caret-position="374">
+              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1541856130527" expanded="true" signature="154:2099" ph="..." />
-                <marker date="1541856130527" expanded="true" signature="2172:2264" ph="..." />
-                <marker date="1541856130527" expanded="true" signature="2531:2537" ph="..." />
+                <marker date="1541858137583" expanded="true" signature="154:2102" ph="..." />
+                <marker date="1541858137583" expanded="true" signature="2175:2267" ph="..." />
+                <marker date="1541858137583" expanded="true" signature="2534:2540" ph="..." />
               </folding>
             </state>
           </provider>
@@ -300,13 +286,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="68" column="34" lean-forward="true" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="34" />
+        <state relative-caret-position="374">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1541856130527" expanded="true" signature="154:2099" ph="..." />
-            <marker date="1541856130527" expanded="true" signature="2172:2264" ph="..." />
-            <marker date="1541856130527" expanded="true" signature="2531:2537" ph="..." />
+            <marker date="1541858137583" expanded="true" signature="154:2102" ph="..." />
+            <marker date="1541858137583" expanded="true" signature="2175:2267" ph="..." />
+            <marker date="1541858137583" expanded="true" signature="2534:2540" ph="..." />
           </folding>
         </state>
       </provider>
