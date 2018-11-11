@@ -6,8 +6,10 @@ let Handler = function () {
     let schoolId = "";
     let sidStatus = true;
 
+    //检查学号
     function checkSid(sid, status) {
         let hasError = false;
+        let exp = /^[0-9]*$/;
         if (sid.length === 0) {
             $$('#usernameError').text('请输入学号');
             hasError = true;
@@ -16,6 +18,10 @@ let Handler = function () {
             $$('#usernameError').text('学号已存在');
             hasError = true;
 
+        }
+        else if(!exp.test(sid)){
+            $$('#usernameError').text('学号只能是数字');
+            hasError = true;
         }
 
         if (hasError) {
@@ -29,6 +35,7 @@ let Handler = function () {
 
     }
 
+    // 检查密码
     function checkPwd(pwd) {
         let hasError = false;
         let $error = $$('#passwordError');
@@ -56,6 +63,7 @@ let Handler = function () {
         }
     }
 
+    //检查确认密码
     function confirmPwd(pwd, confirmPwd) {
         if (pwd === confirmPwd) {
             $$('#passwordConfirmTextfield').removeClass('mdui-textfield-invalid');
@@ -68,6 +76,7 @@ let Handler = function () {
         }
     }
 
+    //检查学校名称
     function checkSchool(schoolName, status) {
         let $error = $$('#schoolError');
         let hasError = false;
@@ -90,6 +99,7 @@ let Handler = function () {
         }
     }
 
+    //检查姓名
     function checkName(name) {
         if (name === "") {
             $$('#nameError').text('请输入姓名');
@@ -102,24 +112,8 @@ let Handler = function () {
         }
     }
 
-    // function changeSchoolStatus() {
-    //     let $error = $$('#schoolError');
-    //     let $textfield = $$('#schoolTextfield');
-    //     console.log(status);
-    //     if (status === "0") {
-    //         $error.text("没有找到 " + $$('#school').val());
-    //         $$('#schoolTextfield').addClass("mdui-textfield-invalid");
-    //     }
-    //     else if (status === "") {
-    //         $error.text("服务器好像出问题了");
-    //         $textfield.addClass("mdui-textfield-invalid");
-    //     }
-    //     else {
-    //         $textfield.removeClass("mdui-textfield-invalid");
-    //     }
-    // }
-
     function schoolInputEvent() {
+        //查询学校是否合法
         $$('#school').on('change', function () {
             let schoolName = $$('#school').val();
             schoolStatus = true;
@@ -146,6 +140,7 @@ let Handler = function () {
     }
 
     function sidInputEvent() {
+        //检查是否有重复学号
         $$('#username').on('change', function () {
             let sid = $$('#username').val();
             sidStatus = true;
@@ -180,7 +175,6 @@ let Handler = function () {
             let name = $$('#name').val();
             let school = $$('#school').val();
 
-            console.log(school, schoolStatus);
             let ready = checkSid(sid, sidStatus) && checkPwd(pwd) && confirmPwd(pwd, pwdConfirm) && checkName(name) && checkSchool(school, schoolStatus);
             if (!ready) return;
 
@@ -200,7 +194,7 @@ let Handler = function () {
                             title: '成功!',
                             content: '注册成功, 请返回登陆界面重新登陆!',
                             buttons: [{
-                                text: '确定', onclick: function () {
+                                text: '确定', onClick: function () {
                                     window.location = '/login/login.html';
                                 }
                             }]

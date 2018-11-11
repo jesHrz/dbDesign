@@ -31,6 +31,8 @@ let loginPageHandler = function () {
             if (!okPWD || !okUSR) return;
 
             $$("#login").text("登录中...");
+            //登录按钮设置为disabled防止连按enter
+            $$('#login').prop('disabled', true);
             $$.ajax({
                 method: 'POST',
                 url: loginUrl,
@@ -63,6 +65,8 @@ let loginPageHandler = function () {
                 },
                 complete: function () {
                     $$('#login').text("登录");
+                    //恢复按钮
+                    $$('#login').prop('disabled', false);
                 }
             });
         });
