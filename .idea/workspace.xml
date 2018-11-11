@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d154507-70f8-4793-9a00-311d9d77c5b5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/logger.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/loginHandler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/registerHandler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/reg.html" beforeDir="false" afterPath="$PROJECT_DIR$/register/reg.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/loginModule.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/loginModule.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/registerModule.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/registerModule.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tor.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/tor.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -100,8 +100,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/register/reg.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="63" column="127" selection-start-line="63" selection-start-column="127" selection-end-line="63" selection-end-column="127" />
+            <state relative-caret-position="527">
+              <caret line="50" column="64" selection-start-line="50" selection-start-column="64" selection-end-line="50" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -110,7 +110,7 @@
         <entry file="file://$PROJECT_DIR$/static/registerModule.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
-              <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+              <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -180,7 +180,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="90" />
     <option name="y" value="315" />
     <option name="width" value="1750" />
@@ -227,7 +227,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541936924833" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541942766606" />
     <property name="last.edited.regexp" value="meimim531" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
@@ -277,12 +277,12 @@
       <workItem from="1541823292687" duration="182000" />
       <workItem from="1541828027411" duration="13564000" />
       <workItem from="1541845015983" duration="13753000" />
-      <workItem from="1541933829003" duration="2793000" />
+      <workItem from="1541933829003" duration="3322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30292000" />
+    <option name="totallyTimeSpent" value="30821000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1988" height="1166" extended-state="6" />
@@ -368,14 +368,14 @@
     <entry file="file://$PROJECT_DIR$/static/registerModule.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
-          <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/register/reg.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="63" column="127" selection-start-line="63" selection-start-column="127" selection-end-line="63" selection-end-column="127" />
+        <state relative-caret-position="527">
+          <caret line="50" column="64" selection-start-line="50" selection-start-column="64" selection-end-line="50" selection-end-column="64" />
         </state>
       </provider>
     </entry>
