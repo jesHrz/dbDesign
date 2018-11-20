@@ -1,11 +1,13 @@
 import json
+
 import tornado.web
 
 from config import *
-from sqlHandler import *
 from logger import GetLogger
+from sqlHandler import *
 
 logger = GetLogger(__name__)
+
 
 class loginHandler(tornado.web.RequestHandler):
     def initialize(self):

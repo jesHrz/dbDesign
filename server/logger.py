@@ -20,7 +20,8 @@ def GetLogger(name):
     console = logging.StreamHandler()
     console.setLevel(logging.INFO)
 
-    log_file_handler = logging.handlers.TimedRotatingFileHandler(filename="logs/log", when="D", interval=1, backupCount=2)
+    log_file_handler = logging.handlers.TimedRotatingFileHandler(filename="logs/log", when="D", interval=1,
+                                                                 backupCount=2)
     log_file_handler.suffix = "%Y-%m-%d.log"
     log_file_handler.setFormatter(formatter)
     log_file_handler.setLevel(logging.INFO)
