@@ -30,5 +30,5 @@ class loginHandler(tornado.web.RequestHandler):
             self.write(json.dumps(pack))
 
     def get(self):
-        logger.info("some one say \"Hello\"")
+        logger.info('some one say "Hello"')
         self.write("hello")

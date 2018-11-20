@@ -22,7 +22,7 @@ class registerHandler(tornado.web.RedirectHandler):
         type = self.get_argument('type')
         if type == 'school':
             school = self.get_argument('info')
-            res = self.handler.select("select school_name from school where school_name = %s", school)
+            res = self.handler.select("select school_id from school where school_name = %s", school)
             info = school + " {}".format("exists" if len(res) > 0 else "no")
             logger.info(info)
             pack = {'success': len(res) > 0, 'data': res}
