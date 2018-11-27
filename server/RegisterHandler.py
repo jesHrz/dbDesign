@@ -3,16 +3,13 @@ import json
 import tornado.web
 
 from config import *
-from logger import GetLogger
-from sqlHandler import *
+from server.logger import GetLogger
+from server.sqlHandler import *
 
 logger = GetLogger(__name__)
 
 
-class registerHandler(tornado.web.RedirectHandler):
-    def initialize(self):
-        self.handler = sqlHandler(dbUsername, dbPassword, dbDatabase, dbHost, dbPort)
-
+class RegisterChecker(tornado.web.RedirectHandler):
     def set_default_headers(self):
         self.set_header("Access-Control-Allow-Origin", "*")
         self.set_header("Access-Control-Allow-Headers", "x-requested-with,authorization")
@@ -39,6 +36,16 @@ class registerHandler(tornado.web.RedirectHandler):
             pack = {'success': False, 'data': []}
             self.write(json.dumps(pack))
 
+
+class RegisterHandler(tornado.web.RedirectHandler):
+    def initialize(self):
+        self.handler = sqlHandler(dbUsername, dbPassword, dbDatabase, dbHost, dbPort)
+
+    def set_default_headers(self):
+        self.set_header("Access-Control-Allow-Origin", "*")
+        self.set_header("Access-Control-Allow-Headers", "x-requested-with,authorization")
+        self.set_header('Access-Control-Allow-Methods', 'POST,GET,PUT,DELETE,OPTIONS')
+
     def post(self):
         sid = self.get_argument('usr')
         pwd = self.get_argument('pwd')
@@ -64,3 +71,6 @@ class registerHandler(tornado.web.RedirectHandler):
             pack = {'success': False, 'data': []}
             self.handler.rollback()
             self.write(json.dumps(pack))
+
+    def get(self):
+        self.render(os.path.join(current_path, 'templates/reg.html'))

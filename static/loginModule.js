@@ -74,7 +74,7 @@ let loginPageHandler = function () {
 
     function registerEventInit() {
         $$('#register').on('click', function () {
-            window.location = "/register/reg.html";
+            window.location.href = 'register';
         });
     }
 

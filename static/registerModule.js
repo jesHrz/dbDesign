@@ -119,7 +119,7 @@ let Handler = function () {
             schoolStatus = true;
             $$.ajax({
                 method: 'GET',
-                url: baseUrl + '/register',
+                url: baseUrl + '/register-check',
                 data: {
                     type: 'school',
                     info: schoolName
@@ -146,7 +146,7 @@ let Handler = function () {
             sidStatus = true;
             $$.ajax({
                 method: 'GET',
-                url: baseUrl + '/register',
+                url: baseUrl + '/register-check',
                 data: {
                     type: 'sid',
                     info: sid
@@ -195,7 +195,7 @@ let Handler = function () {
                             content: '注册成功, 请返回登陆界面重新登陆!',
                             buttons: [{
                                 text: '确定', onClick: function () {
-                                    window.location = '/login/login.html';
+                                    window.location.href = 'login.html';
                                 }
                             }]
                         });

@@ -1,15 +1,19 @@
 import json
-
+import os
 import tornado.web
 
 from config import *
-from logger import GetLogger
-from sqlHandler import *
+from server.logger import GetLogger
+from server.sqlHandler import *
+
 
 logger = GetLogger(__name__)
 
 
-class loginHandler(tornado.web.RequestHandler):
+class LoginHandler(tornado.web.RequestHandler):
+    def data_received(self, chunk):
+        pass
+
     def initialize(self):
         self.handler = sqlHandler(dbUsername, dbPassword, dbDatabase, dbHost, dbPort)
 
@@ -21,7 +25,7 @@ class loginHandler(tornado.web.RequestHandler):
     def post(self):
         usr = self.get_argument('usr')
         pwd = self.get_argument('pwd')
-        res = self.handler.select("select pwd from login where sid = %s", (usr))
+        res = self.handler.select("select pwd from login where sid = %s", usr)
 
         if len(res) > 0:
             pack = {'success': res[0]['pwd'] == pwd, 'data': []}
@@ -30,5 +34,4 @@ class loginHandler(tornado.web.RequestHandler):
             self.write(json.dumps(pack))
 
     def get(self):
-        logger.info('some one say "Hello"')
-        self.write("hello")
+        self.render(os.path.join(current_path, "templates/login.html"))
