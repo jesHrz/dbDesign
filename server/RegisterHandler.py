@@ -23,7 +23,7 @@ class RegisterChecker(tornado.web.RequestHandler):
         if type == 'school':
             school = self.get_argument('info')
             res = self.handler.select("select school_id from school where school_name = %s", school)
-            info = school + " {}".format("exists" if len(res) > 0 else "no")
+            info = school + " {}".format("exists" if len(res) > 0 else "not exists")
             logger.info(info)
             pack = {'success': len(res) > 0, 'data': res}
             self.write(json.dumps(pack))

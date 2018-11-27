@@ -1,11 +1,9 @@
 import json
-import os
 import tornado.web
 
 from config import *
 from server.logger import GetLogger
 from server.sqlHandler import *
-
 
 logger = GetLogger(__name__)
 

@@ -194,10 +194,11 @@ let Handler = function () {
                             title: '成功!',
                             content: '注册成功, 请返回登陆界面重新登陆!',
                             buttons: [{
-                                text: '确定', onClick: function () {
-                                    window.location.href = 'login';
-                                }
-                            }]
+								text: '确定',
+								onClick: function(){
+									window.history.go(-1);
+								}
+							}],
                         });
                     }
                     else {
