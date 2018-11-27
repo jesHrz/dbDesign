@@ -195,7 +195,7 @@ let Handler = function () {
                             content: '注册成功, 请返回登陆界面重新登陆!',
                             buttons: [{
                                 text: '确定', onClick: function () {
-                                    window.location.href = 'login.html';
+                                    window.location.href = 'login';
                                 }
                             }]
                         });
