@@ -10,6 +10,9 @@ logger = GetLogger(__name__)
 
 
 class RegisterChecker(tornado.web.RedirectHandler):
+    def initialize(self):
+        self.handler = sqlHandler(dbUsername, dbPassword, dbDatabase, dbHost, dbPort)
+
     def set_default_headers(self):
         self.set_header("Access-Control-Allow-Origin", "*")
         self.set_header("Access-Control-Allow-Headers", "x-requested-with,authorization")
