@@ -9,7 +9,7 @@ from server.sqlHandler import *
 logger = GetLogger(__name__)
 
 
-class RegisterChecker(tornado.web.RedirectHandler):
+class RegisterChecker(tornado.web.RequestHandler):
     def initialize(self):
         self.handler = sqlHandler(dbUsername, dbPassword, dbDatabase, dbHost, dbPort)
 
@@ -40,7 +40,7 @@ class RegisterChecker(tornado.web.RedirectHandler):
             self.write(json.dumps(pack))
 
 
-class RegisterHandler(tornado.web.RedirectHandler):
+class RegisterHandler(tornado.web.RequestHandler):
     def initialize(self):
         self.handler = sqlHandler(dbUsername, dbPassword, dbDatabase, dbHost, dbPort)
 
