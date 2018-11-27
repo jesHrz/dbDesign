@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d154507-70f8-4793-9a00-311d9d77c5b5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/server/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.idea/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/server/.idea/server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/loginHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/loginHandler.py" afterDir="false" />
-    </list>
+    <list default="true" id="7d154507-70f8-4793-9a00-311d9d77c5b5" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,6 +83,7 @@
     <session id="-646158205">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -117,8 +113,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/registerModule.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="146" column="20" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="20" />
+            <state relative-caret-position="400">
+              <caret line="116" column="47" selection-start-line="116" selection-start-column="47" selection-end-line="116" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -291,16 +287,15 @@
       <workItem from="1541933829003" duration="3322000" />
       <workItem from="1542018331988" duration="54000" />
       <workItem from="1542019857637" duration="61000" />
-      <workItem from="1542698253233" duration="226000" />
+      <workItem from="1542698253233" duration="576000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31162000" />
+    <option name="totallyTimeSpent" value="31512000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21107784" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -388,8 +383,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/registerModule.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="146" column="20" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="20" />
+        <state relative-caret-position="400">
+          <caret line="116" column="47" selection-start-line="116" selection-start-column="47" selection-end-line="116" selection-end-column="47" />
         </state>
       </provider>
     </entry>
