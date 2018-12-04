@@ -15,13 +15,13 @@ MAX_ROWS = 0
 MIN_ROWS = 0
 ROW_FORMAT = Dynamic;
 
-CREATE TABLE `exercise` (
-`oj_name` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-`exercise_id` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+CREATE TABLE `problem` (
+`oj` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+`pid` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 `statement` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
 `input_example` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
 `output_example` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
-PRIMARY KEY (`oj_name`, `exercise_id`) 
+PRIMARY KEY (`oj`, `pid`) 
 )
 ENGINE = InnoDB
 AUTO_INCREMENT = 0
@@ -33,15 +33,15 @@ MAX_ROWS = 0
 MIN_ROWS = 0
 ROW_FORMAT = Dynamic;
 
-CREATE TABLE `exercise_record` (
+CREATE TABLE `submission` (
 `sid` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 `submit_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-`oj_name` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-`exercise_id` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+`oj` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+`pid` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
 `code` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
 `submit_time` datetime NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY (`sid`, `submit_id`) ,
-INDEX `fk_exercise_record_exercise_1` (`oj_name` ASC, `exercise_id` ASC) USING BTREE
+INDEX `fk_exercise_record_exercise_1` (`oj` ASC, `pid` ASC) USING BTREE
 )
 ENGINE = InnoDB
 AUTO_INCREMENT = 0
@@ -84,7 +84,7 @@ MAX_ROWS = 0
 MIN_ROWS = 0
 ROW_FORMAT = Dynamic;
 
-CREATE TABLE `person` (
+CREATE TABLE `member` (
 `sid` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 `team_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
 `school_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -151,11 +151,11 @@ MIN_ROWS = 0
 ROW_FORMAT = Dynamic;
 
 
-ALTER TABLE `exercise_record` ADD CONSTRAINT `fk_exercise_record_exercise_1` FOREIGN KEY (`oj_name`, `exercise_id`) REFERENCES `exercise` (`oj_name`, `exercise_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-ALTER TABLE `exercise_record` ADD CONSTRAINT `fk_exercise_record_person_1` FOREIGN KEY (`sid`) REFERENCES `person` (`sid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `submission` ADD CONSTRAINT `fk_submission_problem_1` FOREIGN KEY (`oj`, `pid`) REFERENCES `problem` (`oj`, `pid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `submission` ADD CONSTRAINT `fk_submission_member_1` FOREIGN KEY (`sid`) REFERENCES `member` (`sid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `participation` ADD CONSTRAINT `fk_participation_contest_1` FOREIGN KEY (`contest_id`) REFERENCES `contest` (`contest_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `participation` ADD CONSTRAINT `fk_participation_team_1` FOREIGN KEY (`team_id`) REFERENCES `team` (`team_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-ALTER TABLE `person` ADD CONSTRAINT `fk_person_school_1` FOREIGN KEY (`school_id`) REFERENCES `school` (`school_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-ALTER TABLE `person` ADD CONSTRAINT `fk_person_team_1` FOREIGN KEY (`team_id`) REFERENCES `team` (`team_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-ALTER TABLE `plan` ADD CONSTRAINT `fk_plan_person_1` FOREIGN KEY (`sid`) REFERENCES `person` (`sid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `member` ADD CONSTRAINT `fk_member_school_1` FOREIGN KEY (`school_id`) REFERENCES `school` (`school_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `member` ADD CONSTRAINT `fk_member_team_1` FOREIGN KEY (`team_id`) REFERENCES `team` (`team_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `plan` ADD CONSTRAINT `fk_plan_member_1` FOREIGN KEY (`sid`) REFERENCES `member` (`sid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
